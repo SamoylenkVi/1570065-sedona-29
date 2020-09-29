@@ -2,7 +2,7 @@
   font-family: "PT Sans";
   font-style: normal;
   font-weight: 400;
-  src: local("PT Sans"), local("PTSans-Regular"),
+  src:
     url("../fonts/ptsans.woff") format("woff2"),
     url("../fonts/ptsans.woff2") format("woff");
 }
@@ -11,7 +11,7 @@
   font-family: "PT Sans";
   font-style: normal;
   font-weight: 700;
-  src: local("PT Sans Bold"), local("PTSans-Bold"),
+  src: 
     url("../fonts/ptsansbold.woff2") format("woff2"),
     url("../fonts/ptsansbold.woff") format("woff");
 }
@@ -33,9 +33,7 @@
   --rating-grey: #666666;
   --bac-rating-grey: #f2f2f2;
 }
-svg {
-  fill: currentColor;
-}
+
 .page-body {
   font-family: "PT Sans", Arial, sans-serif;
   font-size: 21px;
@@ -85,15 +83,15 @@ img {
   line-height: 26px;
   color: var(--black);
 }
-.reasons-1 {
+.reasons {
   background-color: var(--basic-blue);
   color: var(--basic-white);
 }
-.reasons-1 h3 {
+.reasons h3 {
   font-size: 21px;
   line-height: 21px;
 }
-.reasons-1 p {
+.reasons p {
   font-weight: normal;
   font-size: 14px;
   line-height: 21px;
@@ -111,19 +109,6 @@ img {
   line-height: 21px;
   font-weight: normal;
   color: var(--black);
-}
-.reasons-2 {
-  background-color: var(--basic-blue);
-  color: var(--basic-white);
-}
-.reasons-2 h3 {
-  font-size: 21px;
-  line-height: 21px;
-}
-.reasons-2 p {
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 21px;
 }
 .features-list {
   list-style: none;
@@ -175,9 +160,11 @@ img {
 .footer-social a:active {
   color: var(--active-blue);
 }
-.footer-copyright a {
-  color: var(--basic-black);
+.footer-copyright svg {
   fill: currentColor;
+}
+.footer-copyright a {
+  color: var(--basic-black); 
 }
 .footer-copyright a:hover,
 .footer-copyright a:focus {
