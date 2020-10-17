@@ -10,7 +10,8 @@
   <body class="page-body">
     <header class="main-header">
       <nav class="main-navigation">
-        <a href="index.html">
+        <div class="main-navigation-wrapper">
+        <a class="main-header-logo" href="index.html">
           <img src="img/logo-sedona.svg" width="138" height="70" alt="Логотип города Седона" title="Перейти на главную страницу "/>
         </a>
         <ul class="site-navigation">
@@ -19,6 +20,7 @@
           <li><a href="">Карта штата</a></li>
           <li><a>Гостиницы</a></li>
         </ul>
+      </div>
       </nav>
     </header>
     <main class="wrapper">
@@ -28,13 +30,15 @@
       </section>
       <section class="assortment">
         <h2>Найдено:</h2>
+        <div class="1">
         <h3>Сортировка:</h3>
         <a>По цене</a>
         <a href="">По типу</a>
         <a href="">По рейтингу</a>
+      </div>
       </section>
       <section class="hotels">
-        <h2>гостиницы</h2>
+        <h2 class="visually-hidden">гостиницы</h2>
         <div>
           <div>
             <a href="">
@@ -71,13 +75,13 @@
       </section>
     </main>
     <footer class="page-footer main-footer">
-      <h2>Телефон</h2>
+      <h2 class="visually-hidden">Телефон</h2>
       <p>
         #visitsedona Тел:
         <a class="contacts-phone" href="tel:+74956660166">+7 (495) 666-01-66</a>
       </p>
       <section class="footer-social">
-        <h2>Соц. сети</h2>
+        <h2 class="visually-hidden">Соц. сети</h2>
         <ul>
           <li>
             <a class="social-button" href="">Twitter</a>
