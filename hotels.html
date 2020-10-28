@@ -30,19 +30,21 @@
       </nav>
     </header>
     <main class="wrapper">
-      <section>
+      <section class="bom">
         <!-- здесь будет форма -->
         <!-- <button class="button-form" type="button">Показать</button> -->
       </section>
       <section class="assortment">
-        <h2>Найдено:</h2>
+        <div class="assortment-title">
+          <h2>Найдено: 3</h2>
+        </div>
         <div class="assortment-wrapper">
           <h3>Сортировка:</h3>
           <a>По цене</a>
           <a href="">По типу</a>
           <a href="">По рейтингу</a>
         </div>
-        <div class="hotels-navigation-button">
+        <div class="assortment-navigation-button">
           <a href="">
             <svg
               width="11"
@@ -70,12 +72,13 @@
         <div>
           <div class="hotels-wrapper">
             <div class="hotels-content">
-              <a href="">
-                <h3 class="name">Amara resort & spa</h3>
-              </a>
-              <p>гостиница от 4000p</p>
-              <a class="link link-details" href="">подробнее</a>
-              <a class="link link-booking" href="">забронировать</a>
+              <a class="name" href=""> Amara resort & spa</a>
+              <div class="price">
+                <p>гостиница</p>
+                <p>От 4000 Р.</p>
+                <a class="link-details" href="">подробнее</a>
+                <a class="link-booking" href="">забронировать</a>
+              </div>
             </div>
             <img
               src="img/amara-resort.jpg"
@@ -90,17 +93,18 @@
                 <li></li>
                 <li></li>
               </ul>
-              <p class="rating">Рейтинг:8,5</p>
+              <p>Рейтинг: 8,5</p>
             </div>
           </div>
           <div class="hotels-wrapper">
             <div class="hotels-content">
-              <a href="">
-                <h3>desert quail inn</h3>
-              </a>
-              <p>мотель от 3000p</p>
-              <a class="link link-details" href="">подробнее</a>
-              <a class="link link-booking" href="">забронировать</a>
+              <a class="name" href="">desert quail inn</a>
+              <div class="price">
+                <p>мотель</p>
+                <p>От 3000 Р.</p>
+                <a class="link-details" href="">подробнее</a>
+                <a class="link-booking" href="">забронировать</a>
+              </div>
             </div>
             <img
               src="img/desert-quail.jpg"
@@ -114,17 +118,18 @@
                 <li></li>
                 <li></li>
               </ul>
-              <p class="rating">Рейтинг:8,9</p>
+              <p>Рейтинг: 8,9</p>
             </div>
           </div>
           <div class="hotels-wrapper">
             <div class="hotels-content">
-              <a href="">
-                <h3>villas at poco diablo</h3>
-              </a>
-              <p>апартаменты от 2000p</p>
-              <a class="link link-details" href="">подробнее</a>
-              <a class="link link-booking" href="">забронировать</a>
+              <a class="name" href="">villas at poco diablo</a>
+              <div class="price">
+                <p>Апартаменты</p>
+                <p>От 2000 Р.</p>
+                <a class="link-details" href="">подробнее</a>
+                <a class="link-booking" href="">забронировать</a>
+              </div>
             </div>
             <img
               src="img/villas-at-poco.jpg"
@@ -137,15 +142,15 @@
                 <li></li>
                 <li></li>
               </ul>
-              <p class="rating">Рейтинг:9,2</p>
+              <p>Рейтинг: 9,2</p>
             </div>
           </div>
         </div>
       </section>
     </main>
-    <footer class="page-footer main-footer">
+    <footer class="page-footer">
       <h2 class="visually-hidden">Телефон</h2>
-      <div class="contacts-wrapper">
+      <div class="contacts-wrapper footer-hotels">
         <p>#visitsedona</p>
         <a class="contacts-phone" href="tel:+74956660166">
           Тел: +7 (495) 666-01-66</a
