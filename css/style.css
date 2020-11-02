@@ -33,6 +33,10 @@
   --navigation-grey: #cacaca;
   --border-black: rgba(0, 0, 0, 0.25);
   --white-shadow: rgba(0, 1, 1, 0.2);
+  --background-grey: #888888;
+  --grey-picture: #a9a9a9;
+  --form-hover-grey: #ebebeb;
+  --toggle-grey: #ababab;
 }
 
 .visually-hidden {
@@ -70,6 +74,11 @@ img {
   max-width: 100%;
   height: auto;
 }
+.all-wrapper {
+  width: 1200px;
+  margin: 0 auto;
+  box-shadow: 0px 5px 15px var(--white-shadow);
+}
 .main-navigation {
   display: grid;
   font-size: 14px;
@@ -81,14 +90,11 @@ img {
   position: relative;
   width: 1200px;
   margin: 0 auto;
-  box-shadow: 0px 5px 15px var(--white-shadow);
 }
 
 .site-navigation {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: 19% 19% 24% 19% 19%;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -103,21 +109,50 @@ img {
   z-index: 1;
 }
 .site-navigation li {
-  flex-basis: 20%;
+  text-align: center;
+}
+.site-navigation li:first-child {
+  grid-column-start: 1;
+  grid-column-end: 2;
 }
 
-.site-navigation li:nth-child(4n + 2),
-.site-navigation li:nth-child(4n + 3) {
-  flex-basis: 30%;
+.site-navigation li:nth-child(2) {
+  grid-column-start: 2;
+  grid-column-end: 3;
 }
+.site-navigation li:nth-child(3) {
+  grid-column-start: 4;
+  grid-column-end: 5;
+}
+.site-navigation li:nth-child(4){
+  grid-column-start: -2;
+  grid-column-end: -1;
+}
+
+/* .site-navigation li:nth-child(4n + 1) {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.site-navigation li:nth-child(4n + 2) {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+.site-navigation li:nth-child(4n + 3) {
+  grid-column-start: 4;
+  grid-column-end: 5;
+}
+.site-navigation li:nth-child(4n + 4){
+  grid-column-start: -2;
+  grid-column-end: -1;
+} */
+
 .site-navigation a {
+  display: inline-block;
+  align-items: center;
   box-sizing: border-box;
   color: var(--basic-black);
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 100%;
-  padding: 10px 15px 12px;
+  padding: 15px 15px 12px;
 }
 .site-navigation a:hover,
 .site-navigation a:focus {
@@ -133,7 +168,6 @@ img {
 .wrapper {
   width: 1200px;
   margin: 0 auto;
-  box-shadow: 0px 5px 15px var(--white-shadow);
 }
 .title-image {
   position: relative;
@@ -289,7 +323,7 @@ img {
   font-size: 14px;
   line-height: 24px;
   text-align: center;
-  padding: 27px 0 44px;
+  padding: 26px 0 45px;
   margin: 0;
 }
 .modal-button {
@@ -303,9 +337,9 @@ img {
   line-height: 26px;
   text-align: center;
   border: none;
-  outline: none;
   width: 568px;
   min-height: 86px;
+  position: relative;
 }
 .modal-button:hover,
 .modal-button:focus {
@@ -315,10 +349,169 @@ img {
   color: var(--active-white);
   background-color: var(--active-brown);
 }
+.modal-booking {
+  position: absolute;
+  background-color: var(--basic-white);
+  width: 568px;
+  min-height: 395px;
+  top: 2169px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.booking-form {
+  padding: 54px 54px 39px 54px;
+}
+.booking-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-bottom: 30px;
+}
+.booking-item label {
+  width: 25%;
+  box-sizing: border-box;
+  padding-right: 10px;
+}
+
+.booking-item input {
+  border: none;
+  background-color: var(--modal-grey);
+  min-height: 38px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 26px;
+  text-transform: uppercase;
+  width: 75%;
+  padding: 0 42px 0 9px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.booking-item input:focus {
+  background-color: var(--basic-white);
+  outline: none;
+}
+.booking-item input:hover {
+  background-color: var(--form-hover-grey);
+}
+.booking-item .calendar {
+  position: absolute;
+  width: 40px;
+  height: 36px;
+  padding: 4px 0 2px 5px;
+  margin: 0;
+  right: 10%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: var(--grey-picture);
+}
+.calendar svg {
+  fill: currentColor;
+}
+.booking-item .calendar:focus,
+.booking-item .calendar:hover {
+  color: var(--basic-black);
+}
+.booking-item .calendar:active {
+  color: var(--basic-blue);
+}
+.number-of-people {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-bottom: 24px;
+  position: relative;
+}
+
+.number-of-people label {
+  width: 50%;
+  box-sizing: border-box;
+}
+.number-of-people input {
+  width: 114px;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 6px 38px;
+  box-sizing: border-box;
+}
+.children label {
+  padding-left: 49px;
+}
+
+.number-of-people button {
+  position: absolute;
+  content: "";
+  width: 38px;
+  height: 38px;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  outline: none;
+}
+
+.number-of-people .minus::before,
+.number-of-people .plus::before,
+.number-of-people .plus::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 3px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--grey-picture);
+}
+.number-of-people .plus::after {
+  transform: rotate(90deg);
+  left: 35%;
+  top: 46%;
+}
+
+.number-of-people button:hover::before,
+.number-of-people button:hover::after,
+.number-of-people button:focus::before,
+.number-of-people button:focus::after {
+  background-color: var(--basic-black);
+}
+.number-of-people button:active::before,
+.number-of-people button:active::after {
+  background-color: var(--basic-blue);
+}
+.number-of-people .minus-adults {
+  left: 25%;
+}
+.number-of-people .plus-adults {
+  left: 41%;
+}
+.number-of-people .minus-child {
+  right: 17%;
+}
+.number-of-people .plus-child {
+  right: 0%;
+}
+.booking-button {
+  width: 458px;
+  min-height: 58px;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  font-size: 21px;
+  line-height: 26px;
+}
+.booking-button:hover,
+.booking-button:focus {
+  background-color: var(--focus-blue);
+}
+.booking-button:active {
+  background-color: var(--active-blue);
+  color: var(--active-white);
+}
 
 .map {
   width: 100%;
   height: 473px;
+  font: inherit;
 }
 
 .page-footer {
@@ -326,7 +519,6 @@ img {
   grid-template-columns: 1fr 1fr 1fr;
   margin: 0 auto;
   width: 1200px;
-  box-shadow: 0px 5px 15px var(--white-shadow);
 }
 .contacts-wrapper {
   display: flex;
@@ -461,9 +653,187 @@ img {
   border: 2px solid #ffffff;
   text-transform: uppercase;
 }
-.bom {
-  height: 217px;
-  background-image: url(../img/background-photo.jpg);
+.hotels-form {
+  background-image: url(../img/background-hotel.jpg);
+  background-size: cover;
+}
+
+.hotels-form-wrapper {
+  box-sizing: border-box;
+  min-height: 217px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 25px 72px 25px 73px;
+}
+.hotels-form-wrapper ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.hotels-form-wrapper fieldset {
+  border: none;
+  padding: 0 45px 0 0;
+  margin: 0;
+  width: 24%;
+  box-sizing: border-box;
+}
+.hotels-form-wrapper legend {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 21px;
+  padding-bottom: 2px;
+  color: var(--basic-white);
+}
+
+.filter-checkbox label {
+  position: relative;
+  margin-top: 16px;
+  display: block;
+  padding-top: 5px;
+  padding-left: 41px;
+  cursor: pointer;
+  user-select: none;
+  color: var(--basic-white);
+}
+.filter-input-checkbox + label::before,
+.filter-input-checkbox:disabled + label::before,
+.filter-input-checkbox:hover + label::before,
+.filter-input-checkbox:focus + label::before {
+  position: absolute;
+  content: "";
+  background-image: url(../img/checkbox-off.svg);
+  background-repeat: no-repeat;
+  width: 26px;
+  height: 24px;
+  left: -1px;
+  top: 6px;
+}
+
+.filter-input-checkbox:focus + label::before {
+  outline: 3px solid var(--basic-blue);
+}
+
+.filter-input-checkbox:checked + label::before,
+.filter-input-checkbox:checked:disabled + label::before {
+  position: absolute;
+  content: "";
+  background-image: url(../img/checkbox-on.svg);
+  background-repeat: no-repeat;
+  width: 26px;
+  height: 24px;
+  left: -1px;
+  top: 6px;
+}
+.filter-input-checkbox:disabled + label::before,
+.filter-input-checkbox:checked:disabled + label::before {
+  opacity: 0.3;
+}
+form .range-wrapper {
+  margin-left: auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.range-wrapper legend {
+  padding-bottom: 12px;
+}
+.price-controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: 2px solid var(--basic-white);
+  border-radius: 2px;
+  width: 317px;
+  min-height: 36px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  position: relative;
+}
+.price-controls::before {
+  position: absolute;
+  content: "";
+  width: 2px;
+  height: 22px;
+  left: 50%;
+  background-color: var(--basic-white);
+}
+.price-controls label {
+  flex-basis: 50%;
+  cursor: pointer;
+  user-select: none;
+}
+.price-controls input {
+  background-color: transparent;
+  color: white;
+  border: none;
+  text-align: center;
+  outline: none;
+  text-transform: uppercase;
+  padding: 3px;
+  box-sizing: border-box;
+}
+.range-filter {
+  width: 317px;
+}
+.range-controls {
+  position: relative;
+  height: 20px;
+  padding-bottom: 15px;
+}
+.range-controls .scale {
+  height: 2px;
+  width: 317px;
+  background-color: var(--active-white);
+}
+.range-controls .bar {
+  width: 86%;
+  height: 2px;
+  background-color: var(--basic-white);
+}
+.range-controls .toggle {
+  transition-duration: 200ms;
+  position: absolute;
+  top: -9px;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  background-color: var(--toggle-grey);
+  border: 8px solid var(--basic-white);
+  border-radius: 50%;
+  outline: none;
+}
+.range-controls .toggle:hover,
+.range-controls .toggle:focus {
+  transform: scale(1.2);
+}
+.range-controls .toggle-max {
+  left: 80%;
+}
+.filter-button {
+  width: 137px;
+  min-height: 36px;
+  padding: 0;
+  margin: 0;
+  margin-right: 12px;
+  text-align: center;
+  background-color: transparent;
+  border: 2px solid var(--basic-white);
+  color: white;
+  text-transform: uppercase;
+}
+.filter-button:hover,
+.filter-button:focus {
+  color: var(--basic-black);
+  background-color: white;
+  border: none;
+  outline: none;
 }
 .assortment {
   display: grid;
