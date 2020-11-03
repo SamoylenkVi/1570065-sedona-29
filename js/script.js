@@ -2,28 +2,50 @@
 (function () {
     const MINUS_BUTTON_CLASS = 'minus';
     const PLUS_BUTTON_CLASS = 'plus';
-    const adults = document.querySelector('.adults');
-    const adultsInput = adults.querySelector('#adults');
-    const children = document.querySelector('.children');
-    const childrenInput = children.querySelector('#children');
+
     const modalButton = document.querySelector('.modal-button');
     const modal = document.querySelector('.modal-booking');
+    if (modalButton && modal) {
+        modal.classList.add('show-modal');
 
-    modal.classList.add('show-modal');
+        modalButton.addEventListener('click', (evt) => {
+            evt.preventDefault();
+            modal.classList.remove('invalid-modal');
+            modal.classList.toggle('hide-modal');
+            modal.classList.toggle('show-modal');
+        });
 
-    modalButton.addEventListener('click', (evt) => {
-        evt.preventDefault();
-        modal.classList.toggle('hide-modal');
-        modal.classList.toggle('show-modal');
-      });
+        const form = modal.querySelector('.booking-form');
 
-    adults.addEventListener('click', evt => {
-        changeGuestsNumber(evt, adultsInput);
-    });
+        if (form && modal) {
+            form.addEventListener(
+                'invalid',
+                () => {
+                    modal.classList.remove('invalid-modal');
+                    void modal.offsetWidth;
+                    modal.classList.add('invalid-modal');
+                },
+                true
+            );
+        }
+    }
 
-    children.addEventListener('click', evt => {
-        changeGuestsNumber(evt, childrenInput);
-    }); 
+    const adults = document.querySelector('.adults');
+    const children = document.querySelector('.children');
+    if (adults && children) {
+        const adultsInput = adults.querySelector('#adults');
+        const childrenInput = children.querySelector('#children');
+
+        if (adultsInput && childrenInput) {
+            adults.addEventListener('click', evt => {
+                changeGuestsNumber(evt, adultsInput);
+            });
+
+            children.addEventListener('click', evt => {
+                changeGuestsNumber(evt, childrenInput);
+            });
+        }
+    }
 
     function changeGuestsNumber(evt, guestsType) {
         const classList = evt.target.classList;
