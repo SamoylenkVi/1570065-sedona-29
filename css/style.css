@@ -60,6 +60,21 @@
   }
 }
 
+@keyframes invalid-modal {
+  from {
+    transform: translate(-50%, 0);
+  }
+  25% {
+    transform: translate(-60%, 0);
+  }
+  75% {
+    transform: translate(-45%, 0);
+  }
+  to {
+    transform: translate(-50%, 0);
+  }
+}
+
 .visually-hidden {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
@@ -377,6 +392,13 @@ img {
   animation-name: show-modal;
 }
 
+.invalid-modal {
+  animation-name: invalid-modal;
+  animation-duration: 200ms;
+  animation-timing-function: linear;
+  animation-iteration-count: 2;
+}
+
 .booking-form {
   padding: 54px 54px 39px 54px;
 }
@@ -531,10 +553,19 @@ img {
 }
 
 .map {
+  position: relative;
   width: 100%;
   height: 473px;
   font: inherit;
   background-image: url("../img/map.jpg");
+}
+.iframe {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 .page-footer {
@@ -784,6 +815,7 @@ form .range-wrapper {
   text-transform: uppercase;
   color: var(--basic-white);
 }
+
 .price-controls::before {
   position: absolute;
   content: "";
@@ -794,7 +826,6 @@ form .range-wrapper {
 }
 .price-controls label {
   flex-basis: 24%;
-  cursor: pointer;
   user-select: none;
   text-align: end;
   font-style: normal;
@@ -811,11 +842,16 @@ form .range-wrapper {
   outline: none;
   padding: 3px;
   box-sizing: border-box;
+  cursor: pointer;
+}
+.price-controls input::placeholder {
+  color: var(--basic-white);
 }
 .range-filter {
   width: 317px;
 }
 .range-controls {
+  cursor: pointer;
   position: relative;
   height: 20px;
   padding-bottom: 15px;
@@ -956,7 +992,7 @@ form .range-wrapper {
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: flex-start;
-  padding: 20px 67px 0px 73px;
+  padding: 20px 71px 0px 73px;
   box-sizing: border-box;
   min-height: 151px;
   border-top: 1px solid var(--border-grey);
@@ -1023,7 +1059,7 @@ form .range-wrapper {
   background-image: url(../img/star.svg);
   background-repeat: space;
   height: 20px;
-  padding: 0px 3px 9px 0px;
+  padding: 0 0 9px 0;
 }
 .rating-wrapper .four {
   width: 91px;
@@ -1046,7 +1082,7 @@ form .range-wrapper {
   text-align: center;
   box-sizing: border-box;
   padding: 3px 3px 3px 6px;
-  margin: auto 6px 29px;
+  margin: auto 2px 29px;
 }
 a.link-booking {
   display: inline-block;
