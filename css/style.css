@@ -434,7 +434,7 @@ img {
 
 .booking-item input:focus {
   background-color: var(--basic-white);
-  outline: none;
+  outline: 2px solid var(--border-grey);
 }
 .booking-item input:hover {
   background-color: var(--form-hover-grey);
