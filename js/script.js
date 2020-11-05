@@ -6,7 +6,8 @@
     const modalButton = document.querySelector('.modal-button');
     const modal = document.querySelector('.modal-booking');
     if (modalButton && modal) {
-        modal.classList.add('show-modal');
+        modal.classList.remove('modal-booking-no-js');
+        modal.classList.add('hide-modal');
 
         modalButton.addEventListener('click', (evt) => {
             evt.preventDefault();
