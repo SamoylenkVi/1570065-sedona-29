@@ -3,7 +3,7 @@
     const MINUS_BUTTON_CLASS = 'minus';
     const PLUS_BUTTON_CLASS = 'plus';
 
-    const modalButton = document.querySelector('.modal-button');
+    const modalButton = document.querySelector('.modal-link');
     const modal = document.querySelector('.modal-booking');
     if (modalButton && modal) {
         modal.classList.remove('modal-booking-no-js');
