@@ -2,6 +2,7 @@
 
 * Студент: [Виктория Самойленко](https://up.htmlacademy.ru/htmlcss/29/user/1570065).
 * Наставник: [Ярослав Шевцов] (https://htmlacademy.ru/profile/redx).
+* [live demo] (https://samoylenkvi.github.io/1570065-sedona-29/)
 
 ---
 
